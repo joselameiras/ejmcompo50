@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cursos_borrar', function (Blueprint $table) {
+        Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->string('photo',250);
-            $table->string('description')->nullable();
+            $table->string('apaterno',250);
+            $table->string('amaterno',50);
+            $table->string('curp',250);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cursos_borrar');
+        Schema::dropIfExists('alumnos');
     }
 };
