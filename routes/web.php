@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CursosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,5 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/curso', function () {return view('curso');});
 Route::get('/courses/{id}',function($id){return "curso no: ".$id;});
 Route::get('/courses', function(){return "todos los cursos";});
+Route::get('/controla', [CursosController::class, "index"]);
 
