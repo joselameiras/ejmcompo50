@@ -7,7 +7,7 @@
     <tr>
 <td>{{$course->id}}</td>
 <td>{{$course->name}}</td>
-<td>{{$course->photo}}</td>
+<td><img src="{{$course->photo}}" width="70px" alt="{{$course->id}}"></td>
 
     </tr>
     @endforeach
