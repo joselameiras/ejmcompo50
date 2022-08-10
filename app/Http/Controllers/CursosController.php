@@ -8,10 +8,11 @@ use App\Models\Curso_table;
 class CursosController extends Controller
 {
     //
-    public function index(){
+    public function index(Request $request){
 
         //return "enviado desde el controlador";
-        return Curso_table::all();
+        $curso=Curso_table::all();
+        return view("lista",["cursos"=>$curso]);
     }
 
     public function show($id, Request $request){

@@ -19,6 +19,7 @@ Route::get('/curso', function () {return view('curso');});
 Route::get('/courses/{id}',function($id){return "curso no: ".$id;});
 Route::get('/courses', function(){return "todos los cursos";});
 Route::get('/main', function(){return view('main');});
+Route::get('/create', function(){return view('create');});
 
 
 Route::get('/controla',         [CursosController::class, "index"]);
