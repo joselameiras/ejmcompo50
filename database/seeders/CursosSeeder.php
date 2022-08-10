@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Curso_table;
 use Faker\Factory as Faker;
-
 class CursosSeeder extends Seeder
 {
     /**
@@ -16,6 +15,11 @@ class CursosSeeder extends Seeder
      */
     public function run()
     {
+
+Curso_table::factory()
+            ->count(50)
+            ->create();
+/*
         $faker = Faker::create();
         for ($i=0; $i < 100; $i++) { 
              $o=new Curso_table();
@@ -24,5 +28,6 @@ class CursosSeeder extends Seeder
         $o->photo=$faker->imageUrl(640, 480, 'animals', true);
         $o->save();
         }
+        */
     }
 }
