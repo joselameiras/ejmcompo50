@@ -15,15 +15,29 @@ class CursosController extends Controller
     }
 
     public function show($id, Request $request){
-        $course=Curso_table::findOrFail($id);
+        return Curso_table::findOrFail($id);
 
     }
 
     public function store(Request $request){
-        $this->validate(
-            $request, ["name"=>'required',"description"=>'required',"photo"=>'required']
-        );
-           
+        $validated=$request->validate(
+            $request, ["name"=>'required',"description"=>'required',"photo"=>'required|url']
+        );    
+        return Curso_table::create($validated);
+    }
+
+    public function update($id, Request $request){
+        $curso=Curso_table::findOrFail($id);
+        $validated=$request->validate(
+            $request, ["name"=>'required',"description"=>'required',"photo"=>'required|url']
+        );    
+        return Curso_table::update($validated);
+    }
+
+     public function destroy($id){
+         $curso=Curso_table::findOrFail($id);
+        $curso->delete();
+        return true;
 
     }
 }

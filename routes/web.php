@@ -18,5 +18,12 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/curso', function () {return view('curso');});
 Route::get('/courses/{id}',function($id){return "curso no: ".$id;});
 Route::get('/courses', function(){return "todos los cursos";});
-Route::get('/controla', [CursosController::class, "index"]);
+Route::get('/main', function(){return view('main');});
+
+
+Route::get('/controla',         [CursosController::class, "index"]);
+Route::get('/controla/{id}',    [CursosController::class, "show"]);
+Route::post('/controla',        [CursosController::class, "store"]);
+Route::put('/controla/{id}',    [CursosController::class, "update"]);
+Route::delete('/controla/{id}', [CursosController::class, "delete"]);
 
