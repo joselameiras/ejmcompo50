@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('/curso', function () {return view('curso');});
-
+Route::get('/courses/{id}',function($id){return "curso no: ".$id;});
+Route::get('/courses', function(){return "todos los cursos";});
 
