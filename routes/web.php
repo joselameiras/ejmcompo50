@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursosController;
+use App\Http\Controllers\EstudianteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('/controla',        [CursosController::class, "store"]);
 Route::put('/controla/{id}',    [CursosController::class, "update"]);
 Route::delete('/controla/{id}', [CursosController::class, "delete"]);
 
+//Route::resource('/estudiantes',EstudianteController::class);
