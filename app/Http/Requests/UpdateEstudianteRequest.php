@@ -25,6 +25,17 @@ class UpdateEstudianteRequest extends FormRequest
     {
         return [
             //
+            "nombre"=>'required|string|min:4|max:50',
+            "apellidopaterno"=>'required|string|min:4|max:100',
+            "credencial"=>'required|string',
+            "email"=>'required|email'
+        ];
+    }
+    public function messages()
+    {
+        return[
+            "required" => 'El campo :field es requerido',
+            "credencial.required" =>'Se necesita la credencial para continuar',
         ];
     }
 }

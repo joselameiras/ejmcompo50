@@ -16,6 +16,8 @@ class EstudianteController extends Controller
     public function index()
     {
         //
+        return Estudiante::paginate(10);
+
     }
 
     /**
